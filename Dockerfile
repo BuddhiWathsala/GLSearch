@@ -37,6 +37,7 @@ tqdm==4.31.1 \
 urllib3==1.24.1
 
 
+
 #RUN wget https://web.cs.dal.ca/~peter/software/pynauty/pynauty-0.6.0.tar.gz && tar -vxf pynauty-0.6.0.tar.gz
 
 #RUN cd pynauty-0.6.0 && wget http://users.cecs.anu.edu.au/~bdm/nauty/nauty25r9.tar.gz && tar -vxf nauty25r9.tar.gz && ln -s nauty25r9 nauty
@@ -48,4 +49,7 @@ shapely==1.7.0 \
 comet-ml==3.1.6
 
 WORKDIR /workspace
+COPY load .
+
+CMD [ "python", "test.py" ]
 
