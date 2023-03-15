@@ -49,7 +49,8 @@ shapely==1.7.0 \
 comet-ml==3.1.6
 
 WORKDIR /workspace
-COPY load .
+RUN git clone https://github.com/DerekQXu/GLSearch.git
+COPY load/ ./GLSearch/model/OurMCS
 
-CMD [ "python", "test.py" ]
+CMD [ "python", "./GLSearch/model/OurMCS/test.py" ]
 
