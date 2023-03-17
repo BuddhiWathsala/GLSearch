@@ -50,7 +50,8 @@ comet-ml==3.1.6
 
 WORKDIR /workspace
 RUN git clone https://github.com/DerekQXu/GLSearch.git
-COPY load/ ./GLSearch/model/OurMCS
-
-CMD [ "python", "./GLSearch/model/OurMCS/test.py" ]
+RUN mv GLSearch/* .
+COPY load/ ./model/OurMCS
+WORKDIR /workspace/model/OurMCS/
+CMD [ "python", "test.py" ]
 
