@@ -22,8 +22,8 @@ class OurModelData(TorchDataset):
         return self.gid1gid2_list[idx]
 
 
-root = "/workspace/GLSearch/model/OurMCS/"
-filename = "mutag_train_test_mcs_bfs_one_hot_local_degree_profile_None.klepto"
+root = "/workspace/model/OurMCS/"
+filename = "er.klepto"
 path = root + filename
 
 print(os.path.isfile(path))
@@ -31,5 +31,9 @@ print(os.path.isfile(root + "config.py"))
 print(os.path.isfile(root + "test.py"))
 file = klepto.archives.file_archive(path)
 file.load()
-print("Reproduce the issue https://github.com/DerekQXu/GLSearch/issues/2")
+print("Reproduce the issue https://github.com/DerekQXu//issues/2")
 print(file)
+train_data = file.pop('train_data')
+print(len(train_data))
+print(train_data.__getitem__(0))
+print(train_data.__getitem__(15))
